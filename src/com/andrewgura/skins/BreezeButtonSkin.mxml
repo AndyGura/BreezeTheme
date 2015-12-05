@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SparkButtonSkin xmlns:fx="http://ns.adobe.com/mxml/2009"
+                   xmlns:s="library://ns.adobe.com/flex/spark"
+                   xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+                   minWidth="21" minHeight="21"
+                   alpha.disabled="0.5">
+
+  <fx:Metadata>
+        <![CDATA[
+    [HostComponent("spark.components.Button")]
+    ]]>
+    </fx:Metadata>
+
+  <fx:Script fb:purpose="styling">
+        <![CDATA[
+
+    static private const exclusions:Array = ["iconDisplay", "labelDisplay"];
+
+    override public function get colorizeExclusions():Array {return exclusions;}
+
+    override protected function initializationComplete():void
+    {
+      useChromeColor = true;
+      super.initializationComplete();
+    }
+
+    override protected function updateDisplayList(unscaledWidth:Number, unscaledHeight:Number) : void
+    {
+      var cr:Number = getStyle("cornerRadius");
+
+      if (cornerRadius != cr)
+      {
+        cornerRadius = cr;
+        fill.radiusX = cornerRadius;
+      }
+
+      if (highlightStroke) highlightStroke.radiusX = cornerRadius;
+
+      super.updateDisplayList(unscaledWidth, unscaledHeight);
+    }
+
+    private var cornerRadius:Number = 1;
+
+    ]]>
+    </fx:Script>
+
+  <!-- states -->
+  <s:states>
+    <s:State name="up" />
+    <s:State name="over" />
+    <s:State name="down" />
+    <s:State name="disabled" />
+  </s:states>
+
+  <s:Rect id="fill" radiusX="2"
+          left="1" right="1" top="1" bottom="1"
+          left.down="2" right.down="0" top.down="2" bottom.down="0">
+    <s:fill>
+      <s:SolidColor color="#31363B" color.down="#3DADE8" color.disabled="#2F3439"/>
+    </s:fill>
+  </s:Rect>
+
+  <s:Rect id="highlightStroke" radiusX="1"
+          left="1" right="1" top="1" bottom="1"
+          left.down="2" right.down="0" top.down="2" bottom.down="0">
+    <s:stroke>
+      <s:SolidColorStroke weight="1" color="#6A6E72" color.over="#3DAEE9" color.down="#3DAEE9" color.disabled="#41464A"/>
+    </s:stroke>
+  </s:Rect>
+
+  <s:Label id="labelDisplay"
+           textAlign="center"
+           maxDisplayedLines="1"
+           horizontalCenter="0" verticalCenter="1" verticalAlign="middle"
+           horizontalCenter.down="1" verticalCenter.down="2"
+           left="10" right="10" top="9" bottom="9"/>
+
+</s:SparkButtonSkin>

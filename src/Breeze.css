@@ -1,0 +1,66 @@
+@namespace s "library://ns.adobe.com/flex/spark";
+@namespace mx "library://ns.adobe.com/flex/mx";
+
+global {
+    color: #EFF0F1;
+    fontFamily: Ubuntu;
+    fontSize: 14px;
+    modalTransparency: 0;
+    modalTransparencyBlur: 4;
+    contentBackgroundColor: #232629;
+}
+
+s|Button {
+    skinClass: ClassReference("com.andrewgura.skins.BreezeButtonSkin");
+}
+
+s|CheckBox {
+    symbolColor: #3DADE8;
+    skinClass: ClassReference("com.andrewgura.skins.BreezeCheckboxSkin");
+}
+
+s|TextInput {
+    borderColor: #A3A6A8;
+    focusedTextSelectionColor: #3DADE8;
+    skinClass: ClassReference("com.andrewgura.skins.BreezeTextInputSkin");
+}
+
+s|WindowedApplication {
+    backgroundColor: #31363B;
+    backgroundAlpha: 1;
+}
+
+mx|MenuBar {
+    color: #EFF0F1;
+    backgroundSkin: ClassReference("com.andrewgura.skins.BreezeMenuBarSkin");
+    itemSkin: ClassReference("com.andrewgura.skins.BreezeMenuItemSkin");
+    menuStyleName: "breezeMenu";
+}
+
+.breezeMenu {
+    contentBackgroundColor: #2A2E32;
+    contentBackgroundAlpha: 1;
+    color: #EFF0F1;
+    textSelectedColor: #EFF0F1;
+    textRollOverColor: #EFF0F1;
+    selectionColor: #3DAEE9;
+    rollOverColor: #3DAEE9;
+    selectionDisabledColor: #2A2E32;
+    borderStyle: inset;
+    borderColor: #5D6164;
+    borderAlpha: 1;
+}
+
+s|List {
+    selectionColor: #3DAEE9;
+    rollOverColor: #334E5E;
+}
+
+s|DataGrid {
+    selectionColor: #3DAEE9;
+    rollOverColor: #334E5E;
+    alternatingRowColors: #232629, #32373C;
+    alternatingRollOverColors: #284150, #334E5E;
+    skinClass: ClassReference("com.andrewgura.skins.BreezeDataGridSkin");
+    symbolColor: #EFF0F1;
+}

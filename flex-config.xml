@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<flex-config>
+    <output>bin/BreezeTheme.swc</output>
+    <include-file>
+        <name>Breeze.css</name>
+        <path>src/Breeze.css</path>
+    </include-file>
+    <include-classes>
+        <class>com.andrewgura.skins.BreezeButtonSkin</class>
+        <class>com.andrewgura.skins.BreezeCheckboxSkin</class>
+        <class>com.andrewgura.skins.BreezeTextInputSkin</class>
+        <class>com.andrewgura.skins.BreezeMenuBarSkin</class>
+        <class>com.andrewgura.skins.BreezeMenuItemSkin</class>
+        <class>com.andrewgura.skins.BreezeDataGridSkin</class>
+        <class>com.andrewgura.skins.BreezeGridHeaderRenderer</class>
+        <class>spark.components.WindowedApplication</class>
+    </include-classes>
+</flex-config>
