@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
+        xmlns:s="library://ns.adobe.com/flex/spark">
+
+    <fx:Metadata>
+		<![CDATA[
+        [HostComponent("spark.components.SkinnablePopUpContainer")]
+        ]]>
+	</fx:Metadata>
+
+    <s:states>
+        <s:State name="normal"/>
+        <s:State name="closed"/>
+        <s:State name="disabled"/>
+    </s:states>
+
+    <fx:Script>
+        <![CDATA[
+        ]]>
+    </fx:Script>
+
+    <s:RectangularDropShadow id="dropShadow" blurX="20" blurY="20" alpha="0.32" distance="11"
+                             angle="90" color="#000000" left="0" top="0" right="0" bottom="0"/>
+
+    <s:VGroup width="100%" height="100%" gap="0">
+        <s:Rect width="100%" height="30"
+                topLeftRadiusX="1" topLeftRadiusY="1"
+                topRightRadiusX="1" topRightRadiusY="1">
+            <s:fill>
+                <s:LinearGradient rotation="90">
+                    <s:GradientEntry color="#3B4147"/>
+                    <s:GradientEntry color="#31363B"/>
+                </s:LinearGradient>
+            </s:fill>
+        </s:Rect>
+        <s:Rect width="100%" height="100%"
+                bottomLeftRadiusX="1" bottomLeftRadiusY="1"
+                bottomRightRadiusX="1" bottomRightRadiusY="1">
+            <s:fill>
+                <s:SolidColor color="#31363B"/>
+            </s:fill>
+        </s:Rect>
+    </s:VGroup>
+
+    <s:Group left="15" right="15"
+             top="0" bottom="0">
+        <s:VGroup width="100%" height="100%">
+            <s:VGroup id="contentGroup" width="100%"
+                      paddingTop="20" paddingBottom="20"
+                      paddingLeft="8" paddingRight="8"
+                      horizontalAlign="center"/>
+            <s:Spacer height="100%"/>
+            <s:HGroup id="buttonsGroup" width="100%"
+                      gap="10"
+                      paddingBottom="20"
+                      horizontalAlign="center"/>
+        </s:VGroup>
+    </s:Group>
+
+</s:Skin>

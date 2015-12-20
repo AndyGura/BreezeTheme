@@ -6,6 +6,7 @@
         <path>src/Breeze.css</path>
     </include-file>
     <include-classes>
+        <class>com.andrewgura.skins.BasePopupSkin</class>
         <class>com.andrewgura.skins.BreezeButtonSkin</class>
         <class>com.andrewgura.skins.BreezeCheckboxSkin</class>
         <class>com.andrewgura.skins.BreezeTextInputSkin</class>
