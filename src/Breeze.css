@@ -68,3 +68,7 @@ s|DataGrid {
 s|SkinnablePopUpContainer {
     skinClass: ClassReference("com.andrewgura.skins.BasePopupSkin");
 }
+
+s|VScrollBar {
+    skinClass: ClassReference("com.andrewgura.skins.scroller.VScrollBarSkin");
+}

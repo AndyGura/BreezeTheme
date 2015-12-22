@@ -13,6 +13,7 @@
         <class>com.andrewgura.skins.BreezeMenuBarSkin</class>
         <class>com.andrewgura.skins.BreezeMenuItemSkin</class>
         <class>com.andrewgura.skins.BreezeDataGridSkin</class>
+        <class>com.andrewgura.skins.scroller.VScrollBarSkin</class>
         <class>com.andrewgura.skins.BreezeGridHeaderRenderer</class>
         <class>spark.components.WindowedApplication</class>
     </include-classes>

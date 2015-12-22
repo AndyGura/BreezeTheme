@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SparkSkin xmlns:fx="http://ns.adobe.com/mxml/2009" xmlns:s="library://ns.adobe.com/flex/spark"
+             xmlns:fb="http://ns.adobe.com/flashbuilder/2009" minWidth="15" minHeight="35"
+             alpha.disabled="0.5" alpha.inactive="0.5">
+
+    <fx:Metadata>
+    <![CDATA[
+        [HostComponent("spark.components.VScrollBar")]
+        ]]>
+    </fx:Metadata>
+
+    <fx:Script fb:purpose="styling">
+        static private const exclusions:Array = ["track", "thumb", "decrementButton", "incrementButton"];
+
+        override public function get colorizeExclusions():Array {
+            return exclusions;
+        }
+
+        override protected function initializationComplete():void {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+    </fx:Script>
+
+    <s:states>
+        <s:State name="normal"/>
+        <s:State name="disabled"/>
+        <s:State name="inactive"/>
+    </s:states>
+
+    <s:Button id="track" top="21" bottom="21" right="1"
+              focusEnabled="false" tabEnabled="false"
+              skinClass="com.andrewgura.skins.scroller.VScrollBarTrackSkin"/>
+
+    <s:Button id="thumb"
+              focusEnabled="false" visible.inactive="false" tabEnabled="false"
+              skinClass="com.andrewgura.skins.scroller.VScrollBarThumbSkin"/>
+
+    <s:Button id="decrementButton" top="1" right="1" enabled.inactive="false"
+              focusEnabled="false" tabEnabled="false"
+              skinClass="com.andrewgura.skins.scroller.ScrollBarUpButtonSkin"/>
+
+    <s:Button id="incrementButton" bottom="1" right="1" enabled.inactive="false"
+              focusEnabled="false" tabEnabled="false"
+              skinClass="com.andrewgura.skins.scroller.ScrollBarDownButtonSkin"/>
+
+</s:SparkSkin>
