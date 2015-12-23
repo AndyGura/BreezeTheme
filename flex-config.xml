@@ -8,6 +8,7 @@
     <include-classes>
         <class>com.andrewgura.skins.BasePopupSkin</class>
         <class>com.andrewgura.skins.BreezeButtonSkin</class>
+        <class>com.andrewgura.skins.buttons.CloseWindowButtonSkin</class>
         <class>com.andrewgura.skins.BreezeCheckboxSkin</class>
         <class>com.andrewgura.skins.BreezeTextInputSkin</class>
         <class>com.andrewgura.skins.BreezeMenuBarSkin</class>

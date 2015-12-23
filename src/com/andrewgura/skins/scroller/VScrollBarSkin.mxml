@@ -28,20 +28,24 @@
         <s:State name="inactive"/>
     </s:states>
 
-    <s:Button id="track" top="21" bottom="21" right="1"
+    <s:Button id="track"
+              top="20" bottom="20" right="0" width="20"
               focusEnabled="false" tabEnabled="false"
               skinClass="com.andrewgura.skins.scroller.VScrollBarTrackSkin"/>
 
     <s:Button id="thumb"
+              width="20" right="0"
               focusEnabled="false" visible.inactive="false" tabEnabled="false"
               skinClass="com.andrewgura.skins.scroller.VScrollBarThumbSkin"/>
 
-    <s:Button id="decrementButton" top="1" right="1" enabled.inactive="false"
-              focusEnabled="false" tabEnabled="false"
+    <s:Button id="decrementButton"
+              top="0" right="0" width="20" height="20"
+              enabled.inactive="false" focusEnabled="false" tabEnabled="false"
               skinClass="com.andrewgura.skins.scroller.ScrollBarUpButtonSkin"/>
 
-    <s:Button id="incrementButton" bottom="1" right="1" enabled.inactive="false"
-              focusEnabled="false" tabEnabled="false"
+    <s:Button id="incrementButton"
+              bottom="0" right="0" width="20" height="20"
+              enabled.inactive="false" focusEnabled="false" tabEnabled="false"
               skinClass="com.andrewgura.skins.scroller.ScrollBarDownButtonSkin"/>
 
 </s:SparkSkin>

@@ -14,6 +14,10 @@ s|Button {
     skinClass: ClassReference("com.andrewgura.skins.BreezeButtonSkin");
 }
 
+.breezeCloseButton {
+    skinClass: ClassReference("com.andrewgura.skins.buttons.CloseWindowButtonSkin");
+}
+
 s|CheckBox {
     symbolColor: #3DADE8;
     skinClass: ClassReference("com.andrewgura.skins.BreezeCheckboxSkin");
