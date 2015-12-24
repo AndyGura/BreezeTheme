@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SparkButtonSkin xmlns:fx="http://ns.adobe.com/mxml/2009"
+                   xmlns:s="library://ns.adobe.com/flex/spark"
+                   xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+                   minWidth="21" minHeight="21">
+
+    <!-- host component -->
+    <fx:Metadata>
+        <![CDATA[
+        [HostComponent("spark.components.ButtonBarButton")]
+        ]]>
+    </fx:Metadata>
+
+    <fx:Script fb:purpose="styling">
+
+        static private const exclusions:Array = ["labelDisplay"];
+
+        /**
+         * @private
+         */
+        override public function get colorizeExclusions():Array {
+            return exclusions;
+        }
+
+        /**
+         * @private
+         */
+        override protected function initializationComplete():void {
+            useChromeColor = true;
+            super.initializationComplete();
+        }
+
+        private var cornerRadius:Number = 1;
+
+        private function updateBorderTop(width:Number, height:Number):void {
+            // Generate path data and lay it out. The path is not being layout by the default BasicLayout of this skin
+            // since we excluded it from the layout.
+            var path:String = createPathData(true);
+            borderTop.data = path;
+            borderTop.setLayoutBoundsSize(width, height, false);
+            borderTop.setLayoutBoundsPosition(0, 0, false);
+        }
+
+        private function createPathData(isBorder:Boolean):String {
+            var left:Number = 0;
+            var right:Number = width;
+            var top:Number = 0.5;
+            var bottom:Number = height;
+
+            var a:Number = cornerRadius * 0.292893218813453;
+            var s:Number = cornerRadius * 0.585786437626905;
+
+            // If the path is for the highlight,
+            // Draw the vertical part of the selected tab highlight that's rendered
+            // with alpha=0.07.  The s:Path is configured to include only the left and
+            // right edges of an s:Rect, along with the top left,right rounded corners.
+            // Otherwise, we draw a full path.
+            var path:String = "";
+            path += "M " + left + " " + bottom;
+            path += " L " + left + " " + (top + cornerRadius);
+            path += " Q " + left + " " + (top + s) + " " + (left + a) + " " + (top + a);
+            path += " Q " + (left + s) + " " + top + " " + (left + cornerRadius) + " " + top;
+
+            if (isBorder)
+                path += " L " + (right - cornerRadius) + " " + top;
+            else
+                path += " M " + (right - cornerRadius) + " " + top;
+
+            path += " Q " + (right - s) + " " + top + " " + (right - a) + " " + (top + a);
+            path += " Q " + right + " " + (top + s) + " " + right + " " + (top + cornerRadius);
+            path += " L " + right + " " + bottom;
+
+            return path;
+        }
+
+        /**
+         *  @private
+         */
+        override protected function updateDisplayList(unscaledWidth:Number, unscaleHeight:Number):void {
+            updateBorderTop(unscaledWidth, unscaledHeight);
+            super.updateDisplayList(unscaledWidth, unscaledHeight);
+        }
+    </fx:Script>
+
+    <!-- states -->
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over" stateGroups="overStates"/>
+        <s:State name="down" stateGroups="downStates"/>
+        <s:State name="disabled" stateGroups="disabledStates"/>
+        <s:State name="upAndSelected" stateGroups="selectedStates, selectedUpStates"/>
+        <s:State name="overAndSelected" stateGroups="overStates, selectedStates"/>
+        <s:State name="downAndSelected" stateGroups="downStates, selectedStates"/>
+        <s:State name="disabledAndSelected" stateGroups="selectedUpStates, disabledStates, selectedStates"/>
+    </s:states>
+
+    <s:Rect id="fill" left="0" right="0" top="0" bottom="1" bottom.selectedStates="0" topLeftRadiusX="1" topRightRadiusX="1" width="70"
+            height="22">
+        <s:fill>
+            <s:SolidColor color="#575B5F" color.selectedStates="#31363B" color.over="#334E5E"/>
+        </s:fill>
+    </s:Rect>
+
+    <s:Path id="borderTop" left="0" right="0" top="0" bottom="1" includeInLayout="false">
+        <s:stroke>
+            <s:SolidColorStroke color="#6D7073" alpha="0" alpha.selectedStates="1"/>
+        </s:stroke>
+    </s:Path>
+
+    <s:Label id="labelDisplay"
+             textAlign="center"
+             verticalAlign="middle"
+             maxDisplayedLines="1"
+             horizontalCenter="0" verticalCenter="1"
+             left="10" right="10" top="2" bottom="2">
+    </s:Label>
+
+</s:SparkButtonSkin>

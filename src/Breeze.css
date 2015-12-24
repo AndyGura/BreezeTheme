@@ -76,3 +76,7 @@ s|SkinnablePopUpContainer {
 s|VScrollBar {
     skinClass: ClassReference("com.andrewgura.skins.scroller.VScrollBarSkin");
 }
+
+s|TabBar {
+    skinClass: ClassReference("com.andrewgura.skins.BreezeTabBarSkin");
+}
