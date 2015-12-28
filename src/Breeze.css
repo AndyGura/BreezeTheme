@@ -10,8 +10,30 @@ global {
     contentBackgroundColor: #232629;
 }
 
+s|WindowedApplication {
+    backgroundColor: #31363B;
+    backgroundAlpha: 1;
+}
+
 s|Button {
-    skinClass: ClassReference("com.andrewgura.skins.BreezeButtonSkin");
+    cornerRadius: 2px;
+    fillColor: #31363B;
+    borderColor: #6A6E72;
+    skinClass: ClassReference("com.andrewgura.skins.buttons.BreezeButtonSkin");
+}
+
+s|Button:over {
+    borderColor: #3DAEE9;
+}
+
+s|Button:down {
+    fillColor: #3DADE8;
+    borderColor: #3DAEE9;
+}
+
+s|Button:disabled {
+    fillColor: #2F3439;
+    borderColor: #41464A;
 }
 
 .breezeCloseButton {
@@ -27,11 +49,6 @@ s|TextInput {
     borderColor: #A3A6A8;
     focusedTextSelectionColor: #3DADE8;
     skinClass: ClassReference("com.andrewgura.skins.BreezeTextInputSkin");
-}
-
-s|WindowedApplication {
-    backgroundColor: #31363B;
-    backgroundAlpha: 1;
 }
 
 mx|MenuBar {
