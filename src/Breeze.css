@@ -8,6 +8,11 @@ global {
     modalTransparency: 0;
     modalTransparencyBlur: 4;
     contentBackgroundColor: #232629;
+    focusedTextSelectionColor: #3DADE8;
+    cornerRadius: 2px;
+    focusColor: #3DADE8;
+    focusAlpha: 1;
+    focusThickness: 1px;
 }
 
 s|WindowedApplication {
@@ -16,7 +21,6 @@ s|WindowedApplication {
 }
 
 s|Button {
-    cornerRadius: 2px;
     fillColor: #31363B;
     borderColor: #6A6E72;
     skinClass: ClassReference("com.andrewgura.skins.buttons.BreezeButtonSkin");
@@ -37,7 +41,15 @@ s|Button:disabled {
 }
 
 .breezeCloseButton {
+    iconColor: #EFF0F1;
     skinClass: ClassReference("com.andrewgura.skins.buttons.CloseWindowButtonSkin");
+}
+
+.breezeCloseButton:over {
+    iconColor: #FF98A2;
+}
+.breezeCloseButton:down {
+    iconColor: #DA4453;
 }
 
 s|CheckBox {
@@ -47,7 +59,6 @@ s|CheckBox {
 
 s|TextInput {
     borderColor: #A3A6A8;
-    focusedTextSelectionColor: #3DADE8;
     skinClass: ClassReference("com.andrewgura.skins.BreezeTextInputSkin");
 }
 
@@ -87,7 +98,9 @@ s|DataGrid {
 }
 
 s|SkinnablePopUpContainer {
-    skinClass: ClassReference("com.andrewgura.skins.BasePopupSkin");
+    titleColor1: #3B4147;
+    titleCOlor2: #31363B;
+    skinClass: ClassReference("com.andrewgura.skins.popups.BasePopupSkin");
 }
 
 s|VScrollBar {

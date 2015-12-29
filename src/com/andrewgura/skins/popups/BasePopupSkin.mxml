@@ -28,8 +28,8 @@
                 topRightRadiusX="1" topRightRadiusY="1">
             <s:fill>
                 <s:LinearGradient rotation="90">
-                    <s:GradientEntry color="#3B4147"/>
-                    <s:GradientEntry color="#31363B"/>
+                    <s:GradientEntry color="{getStyle('titleColor1')}"/>
+                    <s:GradientEntry color="{getStyle('titleCOlor2')}"/>
                 </s:LinearGradient>
             </s:fill>
         </s:Rect>
