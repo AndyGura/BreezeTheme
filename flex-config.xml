@@ -15,6 +15,7 @@
         <class>com.andrewgura.skins.BreezeMenuItemSkin</class>
         <class>com.andrewgura.skins.BreezeDataGridSkin</class>
         <class>com.andrewgura.skins.scroller.VScrollBarSkin</class>
+        <class>com.andrewgura.skins.scroller.HScrollBarSkin</class>
         <class>com.andrewgura.skins.BreezeGridHeaderRenderer</class>
         <class>com.andrewgura.skins.BreezeTabBarSkin</class>
     </include-classes>

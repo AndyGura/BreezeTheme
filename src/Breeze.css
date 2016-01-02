@@ -107,6 +107,10 @@ s|VScrollBar {
     skinClass: ClassReference("com.andrewgura.skins.scroller.VScrollBarSkin");
 }
 
+s|HScrollBar {
+    skinClass: ClassReference("com.andrewgura.skins.scroller.HScrollBarSkin");
+}
+
 s|TabBar {
     skinClass: ClassReference("com.andrewgura.skins.BreezeTabBarSkin");
 }
