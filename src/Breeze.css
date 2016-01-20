@@ -114,3 +114,8 @@ s|HScrollBar {
 s|TabBar {
     skinClass: ClassReference("com.andrewgura.skins.BreezeTabBarSkin");
 }
+
+mx|ProgressBar {
+    trackSkin: ClassReference("com.andrewgura.skins.BreezeProgressBarTrackSkin");
+    barSkin: ClassReference("com.andrewgura.skins.BreezeProgressBarSkin");
+}
