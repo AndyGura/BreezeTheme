@@ -94,7 +94,7 @@
         <s:State name="disabledAndSelected" stateGroups="selectedUpStates, disabledStates, selectedStates"/>
     </s:states>
 
-    <s:Rect id="fill" left="0" right="0" top="0" bottom="1" bottom.selectedStates="0" topLeftRadiusX="1" topRightRadiusX="1" width="70"
+    <s:Rect id="fill" left="0" right="0" top="0" bottom="0" topLeftRadiusX="1" topRightRadiusX="1" width="70"
             height="22">
         <s:fill>
             <s:SolidColor color="#575B5F" color.selectedStates="#31363B" color.over="#334E5E"/>
