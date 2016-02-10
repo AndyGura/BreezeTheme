@@ -107,6 +107,12 @@
         </s:stroke>
     </s:Path>
 
+    <s:Rect id="borderBottom" width="{this.width}" y="{this.height-1}" height="0" includeInLayout="false">
+        <s:stroke>
+            <s:SolidColorStroke color="{getStyle('borderColor')}" alpha="1" alpha.selectedStates="0"/>
+        </s:stroke>
+    </s:Rect>
+
     <s:Label id="labelDisplay"
              textAlign="center"
              verticalAlign="middle"
