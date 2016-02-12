@@ -40,15 +40,25 @@ s|Button:disabled {
     borderColor: #41464A;
 }
 
-.breezeCloseButton {
+.breezeCloseWindowButton {
     iconColor: #EFF0F1;
     skinClass: ClassReference("com.andrewgura.skins.buttons.CloseWindowButtonSkin");
 }
-
-.breezeCloseButton:over {
+.breezeCloseWindowButton:over {
     iconColor: #FF98A2;
 }
-.breezeCloseButton:down {
+.breezeCloseWindowButton:down {
+    iconColor: #DA4453;
+}
+
+.breezeCloseTabButton {
+    iconColor: #acadae;
+    skinClass: ClassReference("com.andrewgura.skins.buttons.CloseTabButtonSkin");
+}
+.breezeCloseTabButton:over {
+    iconColor: #EFF0F1;
+}
+.breezeCloseTabButton:down {
     iconColor: #DA4453;
 }
 

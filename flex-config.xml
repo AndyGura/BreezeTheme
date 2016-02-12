@@ -6,9 +6,11 @@
         <path>src/Breeze.css</path>
     </include-file>
     <include-classes>
+        <class>spark.components.ButtonBarButton</class>
         <class>com.andrewgura.skins.popups.BasePopupSkin</class>
         <class>com.andrewgura.skins.buttons.BreezeButtonSkin</class>
         <class>com.andrewgura.skins.buttons.CloseWindowButtonSkin</class>
+        <class>com.andrewgura.skins.buttons.CloseTabButtonSkin</class>
         <class>com.andrewgura.skins.BreezeProgressBarSkin</class>
         <class>com.andrewgura.skins.BreezeProgressBarTrackSkin</class>
         <class>com.andrewgura.skins.BreezeCheckboxSkin</class>

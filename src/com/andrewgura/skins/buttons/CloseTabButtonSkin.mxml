@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<s:SparkButtonSkin xmlns:fx="http://ns.adobe.com/mxml/2009"
+                   xmlns:s="library://ns.adobe.com/flex/spark"
+                   xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
+                   width="12" height="12"
+                   alpha.disabled="0.5">
+
+    <fx:Metadata>
+        <![CDATA[
+        [HostComponent("spark.components.Button")]
+        ]]>
+    </fx:Metadata>
+
+    <fx:Script fb:purpose="styling">
+        <![CDATA[
+        static private const exclusions:Array = ["iconDisplay", "labelDisplay"];
+        ]]>
+    </fx:Script>
+
+    <s:transitions>
+        <s:Transition fromState="*" toState="*">
+                <s:AnimateColor duration="500" target="{fillColor}"/>
+        </s:Transition>
+    </s:transitions>
+    <!-- states -->
+    <s:states>
+        <s:State name="up"/>
+        <s:State name="over"/>
+        <s:State name="down"/>
+        <s:State name="disabled"/>
+    </s:states>
+
+    <s:Rect width="100%" height="100%">
+        <s:fill>
+            <s:SolidColor color="{getStyle('backgroundColor')}" alpha="0.01"/>
+        </s:fill>
+    </s:Rect>
+
+    <s:Path horizontalCenter="0" verticalCenter="0"
+            data="M 3.5 4.0 L 0.0 0.5 L 0.5 0.0 L 4.0 3.5 L 7.5 0.0 L 8.0 0.5 L 4.5 4.0 L 8.0 7.5 L 7.5 8.0 L 4.0 4.5 L 0.5 8.0 L 0.0 7.5 L 3.5 4.0">
+        <s:fill>
+            <s:SolidColor id="fillColor" color="{getStyle('iconColor')}"/>
+        </s:fill>
+    </s:Path>
+
+    <s:Label id="labelDisplay" width="1" height="1" visible="false"/>
+
+</s:SparkButtonSkin>
