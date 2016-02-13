@@ -20,6 +20,7 @@ public class ButtonBarButton extends ToggleButton implements IItemRenderer {
         closeButton = new Button();
         mouseChildren = true;
         addEventListener(MouseEvent.CLICK, onClick);
+        addEventListener(MouseEvent.MIDDLE_CLICK, onClose);
     }
 
     private var _allowDeselection:Boolean = true;
@@ -112,8 +113,12 @@ public class ButtonBarButton extends ToggleButton implements IItemRenderer {
     private function onClick(event:MouseEvent):void {
         if (event.target == closeButton) {
             event.stopImmediatePropagation();
-            dispatchEvent(new DataEvent("closeTab", true, false, _itemIndex.toString()));
+            onClose(event);
         }
+    }
+
+    private function onClose(event:MouseEvent):void {
+        dispatchEvent(new DataEvent("closeTab", true, false, _itemIndex.toString()));
     }
 }
 
