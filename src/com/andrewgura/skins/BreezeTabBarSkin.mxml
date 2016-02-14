@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:Skin
-        xmlns:fx="http://ns.adobe.com/mxml/2009"
+<s:Skin xmlns:fx="http://ns.adobe.com/mxml/2009"
         xmlns:s="library://ns.adobe.com/flex/spark"
         xmlns:fb="http://ns.adobe.com/flashbuilder/2009"
         alpha.disabled="0.5">
@@ -26,6 +25,12 @@
 
             super.updateDisplayList(unscaledWidth, unscaledHeight);
         }
+
+        private function dataGroupItemRendererFunction(value:*):ClassFactory {
+            var classFactory:ClassFactory = new ClassFactory(tabItemRenderer);
+            classFactory.properties = {closeEnabled: hostComponent.isClosingTabEnabled};
+            return classFactory;
+        }
         ]]>
     </fx:Script>
 
@@ -34,6 +39,12 @@
         <s:State name="disabled"/>
     </s:states>
 
+    <fx:Declarations>
+        <fx:Component className="tabItemRenderer">
+            <s:ButtonBarButton skinClass="com.andrewgura.skins.BreezeTabBarButtonSkin"/>
+        </fx:Component>
+    </fx:Declarations>
+
     <s:Line id="borderBottom" left="0" right="0" bottom="0">
         <s:stroke>
             <s:SolidColorStroke weight="1"
@@ -41,15 +52,11 @@
         </s:stroke>
     </s:Line>
 
-    <s:DataGroup id="dataGroup" width="100%" height="100%">
+    <s:DataGroup id="dataGroup" width="100%" height="100%"
+                 itemRendererFunction="dataGroupItemRendererFunction">
         <s:layout>
             <s:ButtonBarHorizontalLayout gap="-1"/>
         </s:layout>
-        <s:itemRenderer>
-            <fx:Component>
-                <s:ButtonBarButton skinClass="com.andrewgura.skins.BreezeTabBarButtonSkin"/>
-            </fx:Component>
-        </s:itemRenderer>
     </s:DataGroup>
 
 </s:Skin>

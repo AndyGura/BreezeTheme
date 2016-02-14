@@ -7,6 +7,7 @@
     </include-file>
     <include-classes>
         <class>spark.components.ButtonBarButton</class>
+        <class>spark.components.TabBar</class>
         <class>com.andrewgura.skins.popups.BasePopupSkin</class>
         <class>com.andrewgura.skins.buttons.BreezeButtonSkin</class>
         <class>com.andrewgura.skins.buttons.CloseWindowButtonSkin</class>
