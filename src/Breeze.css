@@ -1,4 +1,4 @@
-@namespace s "library://ns.adobe.com/flex/spark";
+@namespace "library://ns.adobe.com/flex/spark";
 @namespace mx "library://ns.adobe.com/flex/mx";
 
 global {
@@ -15,38 +15,52 @@ global {
     focusThickness: 1px;
 }
 
-s|WindowedApplication {
+WindowedApplication {
     backgroundColor: #31363B;
     backgroundAlpha: 1;
 }
 
-s|Button {
-    fillColor: #31363B;
-    borderColor: #6A6E72;
+Button {
     skinClass: ClassReference("com.andrewgura.skins.buttons.BreezeButtonSkin");
 }
 
-s|Button:over {
+ToggleButton {
+    skinClass: ClassReference("com.andrewgura.skins.buttons.BreezeToggleButtonSkin");
+}
+
+Button, ToggleButton {
+    fillColor: #31363B;
+    borderColor: #6A6E72;
+}
+
+Button:over, ToggleButton:over {
     borderColor: #3DAEE9;
 }
 
-s|Button:down {
+Button:down, ToggleButton:down, ToggleButton:overAndSelected, ToggleButton:downAndSelected {
     fillColor: #3DADE8;
     borderColor: #3DAEE9;
 }
 
-s|Button:disabled {
+Button:disabled, ToggleButton:disabled {
     fillColor: #2F3439;
     borderColor: #41464A;
+}
+
+ToggleButton:upAndSelected {
+    fillColor: #575B5F;
+    borderColor: #575B5F;
 }
 
 .breezeCloseWindowButton {
     iconColor: #EFF0F1;
     skinClass: ClassReference("com.andrewgura.skins.buttons.CloseWindowButtonSkin");
 }
+
 .breezeCloseWindowButton:over {
     iconColor: #FF98A2;
 }
+
 .breezeCloseWindowButton:down {
     iconColor: #DA4453;
 }
@@ -55,19 +69,21 @@ s|Button:disabled {
     iconColor: #acadae;
     skinClass: ClassReference("com.andrewgura.skins.buttons.CloseTabButtonSkin");
 }
+
 .breezeCloseTabButton:over {
     iconColor: #EFF0F1;
 }
+
 .breezeCloseTabButton:down {
     iconColor: #DA4453;
 }
 
-s|CheckBox {
+CheckBox {
     symbolColor: #3DADE8;
     skinClass: ClassReference("com.andrewgura.skins.BreezeCheckboxSkin");
 }
 
-s|TextInput {
+TextInput {
     borderColor: #A3A6A8;
     skinClass: ClassReference("com.andrewgura.skins.BreezeTextInputSkin");
 }
@@ -93,12 +109,12 @@ mx|MenuBar {
     borderAlpha: 1;
 }
 
-s|List {
+List {
     selectionColor: #3DAEE9;
     rollOverColor: #334E5E;
 }
 
-s|DataGrid {
+DataGrid {
     selectionColor: #3DAEE9;
     rollOverColor: #334E5E;
     alternatingRowColors: #232629, #32373C;
@@ -107,21 +123,21 @@ s|DataGrid {
     symbolColor: #EFF0F1;
 }
 
-s|SkinnablePopUpContainer {
+SkinnablePopUpContainer {
     titleColor1: #3B4147;
     titleCOlor2: #31363B;
     skinClass: ClassReference("com.andrewgura.skins.popups.BasePopupSkin");
 }
 
-s|VScrollBar {
+VScrollBar {
     skinClass: ClassReference("com.andrewgura.skins.scroller.VScrollBarSkin");
 }
 
-s|HScrollBar {
+HScrollBar {
     skinClass: ClassReference("com.andrewgura.skins.scroller.HScrollBarSkin");
 }
 
-s|TabBar {
+TabBar {
     skinClass: ClassReference("com.andrewgura.skins.BreezeTabBarSkin");
 }
 
