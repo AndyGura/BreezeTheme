@@ -28,7 +28,7 @@
 
         private function dataGroupItemRendererFunction(value:*):ClassFactory {
             var classFactory:ClassFactory = new ClassFactory(tabItemRenderer);
-            classFactory.properties = {closeEnabled: hostComponent.isClosingTabEnabled};
+            classFactory.properties = {closeEnabled: hostComponent.isClosingTabEnabled, switchOnDragEnabled: hostComponent.isSwitchOnDragEnabled};
             return classFactory;
         }
         ]]>

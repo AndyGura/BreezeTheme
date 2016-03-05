@@ -4,6 +4,7 @@ import flash.events.Event;
 import flash.events.MouseEvent;
 
 import mx.core.mx_internal;
+import mx.events.DragEvent;
 
 use namespace mx_internal;
 
@@ -51,6 +52,25 @@ public class ButtonBarButton extends ToggleButton implements IItemRenderer {
             closeButton.visible = value;
             closeButton.includeInLayout = value;
         }
+    }
+    private var _switchOnDragEnabled:Boolean = false;
+
+    public function get switchOnDragEnabled():Boolean {
+        return _switchOnDragEnabled;
+    }
+
+    public function set switchOnDragEnabled(value:Boolean):void {
+        if (value == _switchOnDragEnabled) return;
+        _switchOnDragEnabled = value;
+        if (_switchOnDragEnabled) {
+            addEventListener(DragEvent.DRAG_OVER, onDragOver);
+        } else {
+            removeEventListener(DragEvent.DRAG_OVER, onDragOver);
+        }
+    }
+
+    private function onDragOver(event:DragEvent):void {
+        dispatchEvent(new MouseEvent(MouseEvent.CLICK));
     }
 
     private var _showsCaret:Boolean = false;
