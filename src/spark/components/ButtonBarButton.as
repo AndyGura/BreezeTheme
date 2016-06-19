@@ -5,6 +5,7 @@ import flash.events.MouseEvent;
 
 import mx.core.mx_internal;
 import mx.events.DragEvent;
+import mx.events.PropertyChangeEvent;
 
 use namespace mx_internal;
 
@@ -21,6 +22,7 @@ public class ButtonBarButton extends ToggleButton implements IItemRenderer {
         mouseChildren = true;
         addEventListener(MouseEvent.CLICK, onClick);
         addEventListener(MouseEvent.MIDDLE_CLICK, onClose);
+        addEventListener(Event.ADDED_TO_STAGE, onAddedToStage);
     }
 
     override protected function attachSkin():void {
@@ -40,34 +42,9 @@ public class ButtonBarButton extends ToggleButton implements IItemRenderer {
         _allowDeselection = value;
     }
 
-    private var _closeEnabled:Boolean = false;
+    public var closeEnabled:Boolean = false;
 
-    public function get closeEnabled():Boolean {
-        return _closeEnabled;
-    }
-
-    public function set closeEnabled(value:Boolean):void {
-        _closeEnabled = value;
-        if (closeButton) {
-            closeButton.visible = value;
-            closeButton.includeInLayout = value;
-        }
-    }
-    private var _switchOnDragEnabled:Boolean = false;
-
-    public function get switchOnDragEnabled():Boolean {
-        return _switchOnDragEnabled;
-    }
-
-    public function set switchOnDragEnabled(value:Boolean):void {
-        if (value == _switchOnDragEnabled) return;
-        _switchOnDragEnabled = value;
-        if (_switchOnDragEnabled) {
-            addEventListener(DragEvent.DRAG_OVER, onDragOver);
-        } else {
-            removeEventListener(DragEvent.DRAG_OVER, onDragOver);
-        }
-    }
+    public var switchOnDragEnabled:Boolean = false;
 
     private function onDragOver(event:DragEvent):void {
         dispatchEvent(new MouseEvent(MouseEvent.CLICK));
@@ -146,8 +123,35 @@ public class ButtonBarButton extends ToggleButton implements IItemRenderer {
     }
 
     private function onClose(event:MouseEvent):void {
-        if (_closeEnabled) {
+        if (closeEnabled) {
             dispatchEvent(new DataEvent("closeTab", true, false, _itemIndex.toString()));
+        }
+    }
+
+    private function onPropertyChange(event:PropertyChangeEvent):void {
+        if (event.property == 'closeEnabled') {
+            if (closeButton) {
+                closeButton.visible = event.newValue;
+                closeButton.includeInLayout = event.newValue;
+            }
+        } else if (event.property == 'switchOnDragEnabled') {
+            if (event.newValue) {
+                addEventListener(DragEvent.DRAG_OVER, onDragOver);
+            } else {
+                removeEventListener(DragEvent.DRAG_OVER, onDragOver);
+            }
+        }
+    }
+
+    private function onAddedToStage(event:Event):void {
+        if (closeButton) {
+            closeButton.visible = closeEnabled;
+            closeButton.includeInLayout = closeEnabled;
+        }
+        if (switchOnDragEnabled) {
+            addEventListener(DragEvent.DRAG_OVER, onDragOver);
+        } else {
+            removeEventListener(DragEvent.DRAG_OVER, onDragOver);
         }
     }
 }
